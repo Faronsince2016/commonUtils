@@ -15,20 +15,20 @@ from email.mime.application import MIMEApplication
 from email.header import Header
 import os
 
-# 配置信息，可单独写成一个文件
+# 配置信息，可单独写成一个文件引入
 class properties():
     # 设置服务器, "smtp.xx.com"
     mail_host = "smtp.qq.com"
     # 用户名
-    mail_user = "@qq.com"
+    mail_user = "947752894@qq.com"
     # 口令
-    mail_pass = ""
+    mail_pass = "rmqemzsvlhhqbfbb"
     # smtp服务器端口，每个服务商提供的邮件服务端口可能不一致，465是腾讯的端口
     mail_port = 465
     # 发送邮件的地址
-    sender = "@vip.qq.com"
+    sender = "lxw112@vip.qq.com"
     # 接收邮件，可设置为你的QQ邮箱或者其他邮箱，list类型，可同时填写多个地址并以,分割
-    receivers = "@qq.com"
+    receivers = "947752894@qq.com"
     # 邮件发送的内容
     messageText = "测试使用\n"
     # 邮件发送的超文本内容

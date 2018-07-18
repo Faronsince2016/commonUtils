@@ -37,7 +37,7 @@
 |6|common_filesplite.py|拆分指定文件为多个文件|
 |7|common_iniconfig.py|对ini类型的文件进行增删改查操作|
 
-### websock
+### telecommunication
 主要对网络信息等相关操作的工具类
 
 |编号|文件名|说明|
