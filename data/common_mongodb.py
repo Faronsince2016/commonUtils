@@ -148,7 +148,7 @@ class mongodbclient():
             print("查询第一条数据异常：{}".format(str(e)))
 
     # 根据条件查询数据
-    def search_databyquery(self,query,limite):
+    def search_databyquery(self,query,limite,sort_key):
         '''
         :param query:
                     指定字段查询。除了 _id 你不能在一个对象中同时指定 0 和 1，如果你设置了一个字段为 0，则其他都为 1，反之亦然。0、1为布尔值判断，不是实际的参数值。
@@ -160,30 +160,43 @@ class mongodbclient():
                     我们还可以使用正则表达式作为修饰符。正则表达式修饰符只用于搜索字符串的字段。
                     { "name": { "$regex": "^R" } }
         :param limite:指定返回条数
+        :param sort_key:排序规则,str
         :return:返回查询结果
         '''
         try:
             fullres = []
-            # 判断是否使用限制
-            if limite == '' or limite == None:
+            if sort_key == '' or sort_key == None:
+                # 判断是否使用限制
+                if limite == '' or limite == None:
+                    # 没有指定查询条件则查询所有数据
+                    if query == '' or query == None:
+                        allres = self.mycol.find()
+                        for x in allres:
+                            fullres.append(x)
+                    else:
+                        # 根据条件查询
+                        reslist = self.mycol.find(query)
+                        for res in reslist:
+                            fullres.append(res)
+                else:
+                    if query == '' or query == None:
+                        allres = self.mycol.find().limit(limite)
+                        for x in allres:
+                            fullres.append(x)
+                    else:
+                        # 根据条件查询
+                        reslist = self.mycol.find(query).limit(limite)
+                        for res in reslist:
+                            fullres.append(res)
+            else:
                 # 没有指定查询条件则查询所有数据
                 if query == '' or query == None:
-                    allres = self.mycol.find()
+                    allres = self.mycol.find().sort(sort_key)
                     for x in allres:
                         fullres.append(x)
                 else:
                     # 根据条件查询
-                    reslist = self.mycol.find(query)
-                    for res in reslist:
-                        fullres.append(res)
-            else:
-                if query == '' or query == None:
-                    allres = self.mycol.find().limit(limite)
-                    for x in allres:
-                        fullres.append(x)
-                else:
-                    # 根据条件查询
-                    reslist = self.mycol.find(query).limit(limite)
+                    reslist = self.mycol.find(query).sort(sort_key)
                     for res in reslist:
                         fullres.append(res)
             # 返回查询结果
