@@ -43,5 +43,5 @@ class filenamechange():
             os.rename(os.path.join(self.path,file_list),os.path.join(self.path,new_file_name))
 
 if __name__ == '__main__':
-    # filenamechange("C:\Users\Carol\Desktop\\20180606").changename("_")
-    filenamechange("C:\\Users\Carol\Desktop\\20180606").change_name_by_name(2,"_","pageview","00051")
+    filenamechange("C:\Users\Carol\Desktop\\tmp").change_name("20180819",3,"_")
+    # filenamechange("C:\Users\Carol\Desktop\\tmp_ns").change_name_by_name(2,"_","pageview","00051")

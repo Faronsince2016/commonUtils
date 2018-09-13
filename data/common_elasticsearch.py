@@ -4,7 +4,7 @@
     @Time    : 2018/7/4
     @Author  : LiuXueWen
     @Site    : 
-    @File    : common_elasticsearch.py
+    @File    : Test_common_elasticsearch.py
     @Software: PyCharm
     @Description: 对elasticsearch数据的操作，包括获取数据，发送数据
 """
