@@ -16,13 +16,11 @@
 
 * 安装源码包；
     
-        mvn install:install-file -Dfile=F:\LXW\java\common\target\common-0.0.1-SNAPSHOT-sources.jar   -DgroupId=cn
-        .migu.log.util  -DartifactId=common-0.0.1-SNAPSHOT-sources  -Dversion=0.0.1  -Dpackaging=jar
+        mvn install:install-file -Dfile=F:\LXW\java\common\target\common-0.0.1-SNAPSHOT-sources.jar   -DgroupId=cnkj.site.util  -DartifactId=common-0.0.1-SNAPSHOT-sources  -Dversion=0.0.1  -Dpackaging=jar
     
 * 安装基础包:
     
-        mvn install:install-file -Dfile=F:\LXW\java\common\target\common-0.0.1-SNAPSHOT.jar   -DgroupId=cn.migu.log
-        .util  -DartifactId=common-0.0.1-SNAPSHOT  -Dversion=0.0.1  -Dpackaging=jar
+        mvn install:install-file -Dfile=F:\LXW\java\common\target\common-0.0.1-SNAPSHOT.jar   -DgroupId=cnkj.site.util  -DartifactId=common-0.0.1-SNAPSHOT  -Dversion=0.0.1  -Dpackaging=jar
         
 4. 回车运行，出现提示则为成功
     
@@ -32,9 +30,6 @@
         [INFO] Building Maven Stub Project (No POM) 1
         [INFO] --------------------------------[ pom ]---------------------------------
         [INFO]
-        [INFO] --- maven-install-plugin:2.4:install-file (default-cli) @ standalone-pom ---
-        [INFO] Installing F:\LXW\java\common\target\common-0.0.1-SNAPSHOT.jar to C:\Users\Carol\.m2\repository\cn\migu\log\cn.migu.log.util\0.0.1\cn.migu.log.util-0.0.1.jar
-        [INFO] Installing C:\Users\Carol\AppData\Local\Temp\mvninstall623250773444033360.pom to C:\Users\Carol\.m2\repository\cn\migu\log\cn.migu.log.util\0.0.1\cn.migu.log.util-0.0.1.pom
         [INFO] ------------------------------------------------------------------------
         [INFO] BUILD SUCCESS
         [INFO] ------------------------------------------------------------------------
@@ -46,13 +41,13 @@
 
         //源码包
         <dependency>
-            <groupId>cn.migu.log.util</groupId>
+            <groupId>cnkj.site.util</groupId>
             <artifactId>common-0.0.1-SNAPSHOT-sources</artifactId>
             <version>0.0.1</version>
         </dependency>
         //基础包
         <dependency>
-            <groupId>cn.migu.log.util</groupId>
+            <groupId>cnkj.site.util</groupId>
             <artifactId>common-0.0.1-SNAPSHOT</artifactId>
             <version>0.0.1</version>
         </dependency>
